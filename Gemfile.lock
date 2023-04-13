@@ -8,6 +8,7 @@ GEM
   specs:
     ast (2.4.2)
     json (2.6.3)
+    minitest (5.18.0)
     parallel (1.22.1)
     parser (3.2.1.1)
       ast (~> 2.4.1)
@@ -35,6 +36,7 @@ PLATFORMS
 
 DEPENDENCIES
   hexlet_code!
+  minitest
   rake (~> 13.0)
   rubocop (~> 1.21)
 
