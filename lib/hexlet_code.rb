@@ -1,28 +1,27 @@
 # frozen_string_literal: true
 
-require_relative "hexlet_code/version"
-require "minitest/autorun"
+require_relative 'hexlet_code/version'
+require 'minitest/autorun'
 
 module HexletCode
   class Error < StandardError; end
 
   class Tag
-    def self.build(tag, attributes={})
+    def self.build(tag, attributes = {})
       attr = []
       attributes.each { |key, value| attr << %( #{key}="#{value}") }
-      if block_given?()
+      if block_given?
         content = yield
         closing_tag = "</#{tag}>"
       end
       "<#{tag}#{attr.join}>#{content}#{closing_tag}"
     end
   end
-
 end
 
 class TestTag < Minitest::Test
   def test_simple_tag_build
-    expect =  '<input type="submit" value="Save">'
+    expect = '<input type="submit" value="Save">'
     assert_equal HexletCode::Tag.build('br'), '<br>'
     assert_equal HexletCode::Tag.build('input', type: 'submit', value: 'Save'), expect
   end
