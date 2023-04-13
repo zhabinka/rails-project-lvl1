@@ -7,14 +7,14 @@ module HexletCode
   class Error < StandardError; end
 
   class Tag
-    def self.build(tag, properties={})
-      t = [tag]
-      properties.map { |key, value| t << "#{key}=\"#{value}\"" }
-      if block_given?
-        tail = yield
-        tail = "#{tail}</#{tag}>"
+    def self.build(tag, attributes={})
+      attr = []
+      attributes.each { |key, value| attr << %( #{key}="#{value}") }
+      if block_given?()
+        content = yield
+        closing_tag = "</#{tag}>"
       end
-      "<#{t.join(' ')}>#{tail}"
+      "<#{tag}#{attr.join}>#{content}#{closing_tag}"
     end
   end
 
