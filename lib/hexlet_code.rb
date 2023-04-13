@@ -22,9 +22,9 @@ end
 
 class TestTag < Minitest::Test
   def test_simple_tag_build
-    expect =  '<input class="inner">'
+    expect =  '<input type="submit" value="Save">'
     assert_equal HexletCode::Tag.build('br'), '<br>'
-    assert_equal HexletCode::Tag.build('input', class: 'inner'), expect
+    assert_equal HexletCode::Tag.build('input', type: 'submit', value: 'Save'), expect
   end
 
   def test_pair_tag_build
