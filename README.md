@@ -1,3 +1,5 @@
++[![Actions Status](https://github.com/zhabinka/rails-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/zhabinka/rails-project-lvl1/actions)
+
 # HexletCode
 
 Gem allows you to automatically generate a form in web application.
@@ -5,6 +7,7 @@ Gem allows you to automatically generate a form in web application.
 ## Installation
 
 `make install`
+`make lint` 
 
 ## Usage
 
