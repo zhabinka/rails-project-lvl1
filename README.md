@@ -6,7 +6,7 @@ Gem allows you to automatically generate a form in web application.
 
 ## Installation
 
-`make install`
+`make install`  
 `make lint` 
 
 ## Usage
